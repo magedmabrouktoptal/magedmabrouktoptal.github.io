@@ -123,6 +123,23 @@
 
       document.body.appendChild(script);
 
+
+      function preventKeyboardShift() {
+          if (window.visualViewport) {
+              window.visualViewport.addEventListener('resize', function() {
+                  if (window.visualViewport.height < window.innerHeight) {
+                      document.documentElement.style.height = window.innerHeight + 'px';
+                      window.scrollTo(0, 0);
+                  } else {
+                      document.documentElement.style.height = '';
+                  }
+              });
+          }
+      }
+
+      // Call this when your game starts
+      preventKeyboardShift();
+
     </script>
   </body>
 </html>
