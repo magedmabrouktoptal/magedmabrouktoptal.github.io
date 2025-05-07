@@ -122,6 +122,22 @@
 
       document.body.appendChild(script);
 
+      const inputs = document.querySelectorAll('input, textarea');
+
+      inputs.forEach(input => {
+        input.addEventListener('focus', () => {
+          document.body.style.position = 'fixed';
+        });
+
+        input.addEventListener('blur', () => {
+          document.body.style.position = '';
+        });
+      });
+
+      addEventListener("scroll", (event) => { 
+        window.scrollTo(0, 0);
+      })
+
     </script>
   </body>
 </html>
