@@ -1,16 +1,3 @@
-html {
-    height: 100%;
-    overflow: hidden;
-    position: fixed;
-    width: 100%;
-}
-
-body {
-    height: 100%;
-    overflow: auto;
-    position: relative;
-    -webkit-overflow-scrolling: touch;
-}
 body { padding: 0; margin: 0 }
 #unity-container { position: absolute }
 #unity-container.unity-desktop { left: 50%; top: 50%; transform: translate(-50%, -50%) }
