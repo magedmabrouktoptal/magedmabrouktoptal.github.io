@@ -11,6 +11,15 @@
 		<script>
 			var gameInstance = null;
 
+      const textarea = document.getElementById('fixInput');
+       textarea.addEventListener('keydown', function (e) {
+      if (e.key === "Enter") {
+            e.preventDefault();   // stop newline
+            FixInputOnSubmit(); // trigger form submit
+          }
+        });
+
+
 			function FixInputOnSubmit() {
 				OnInputBlur();
 				event.preventDefault();
@@ -27,8 +36,8 @@ function OnInputBlur()
       }
 		</script>
 		<div>
-			<form onsubmit="FixInputOnSubmit()" autocomplete="off" style="width: 0px; height: 0px; position: absolute; top: -9999px;">
-				<input type="text" autocorrect="off" id="fixInput" oninput="OnInputUpdate()" onblur="OnInputBlur()" style="font-size: 42px;">
+			<form onsubmit="FixInputOnSubmit()" id="fixInputForm" autocomplete="off" style="width: 0px; height: 0px; position: absolute; top: -9999px;">
+				<input type="text" rows="1" autocorrect="off" id="fixInput" oninput="OnInputUpdate()" onblur="OnInputBlur()" style="font-size: 42px;">
 			</form>
 		</div>
     <div id="unity-container" class="unity-desktop">
